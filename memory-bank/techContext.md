@@ -1,25 +1,44 @@
-# 技术背景
+# 技术背景 (techContext.md)
 
-## 前端技术栈
-- **Vue.js**: 版本 3.x
-- **Vue Router**: 版本 4.x
-- **Pinia**: 版本 2.x (推荐用于状态管理)
-- **Axios**: 版本 1.x (用于HTTP请求)
-- **UI组件库**: 待定 (根据实际需求选择 Vant 或 NutUI)
-- **构建工具**: Vite (推荐，用于快速开发和构建)
+## 使用的技术
 
-## 开发环境要求
-- **Node.js**: 版本 16.x 或更高
-- **npm/yarn**: 最新稳定版
-- **IDE**: 推荐使用 VS Code，并安装 Vue 3 相关插件（如 Volar）
+*   **前端框架：** Vue.js 3.x
+    *   选择理由：轻量、高性能、易学易用，社区活跃，生态系统成熟。
+*   **构建工具：** Vite
+    *   选择理由：极速的开发服务器启动，即时热模块更新 (HMR)，开箱即用的构建优化。
+*   **状态管理：** Pinia
+    *   选择理由：Vue 官方推荐的状态管理库，API 更简洁直观，类型推断友好，更轻量。
+*   **路由管理：** Vue Router 4.x
+    *   选择理由：Vue 官方路由，与 Vue.js 深度集成，功能强大。
+*   **HTTP 请求库：** Axios
+    *   选择理由：基于 Promise 的 HTTP 客户端，支持浏览器和 Node.js，API 简洁，支持请求/响应拦截器。
+*   **语言：** JavaScript (ES6+)
+    *   选择理由：根据用户要求，不使用 TypeScript。
+*   **样式预处理器：** (待定，可选择 Less 或 Sass)
+    *   选择理由：提高 CSS 编写效率和可维护性，支持变量、嵌套、混合等。
+*   **UI 组件库：** (待定，例如 Element Plus, Vant, Naive UI 等)
+    *   选择理由：提供开箱即用的高质量 UI 组件，加速开发。
 
-## 主要依赖库
-- `vue`: Vue.js 核心库
-- `vue-router`: Vue.js 官方路由
-- `pinia`: Vue.js 官方状态管理库
-- `axios`: 基于 Promise 的 HTTP 客户端
+## 开发环境设置
 
-## 工具链
-- **Vite**: 作为开发服务器和构建工具
-- **ESLint**: 代码规范检查
-- **Prettier**: 代码格式化
+*   **Node.js：** 推荐 LTS 版本 (例如 16.x 或 18.x)
+*   **包管理器：** npm 或 yarn (推荐 npm)
+*   **IDE：** Visual Studio Code
+    *   推荐插件：Volar (Vue 3 支持), ESLint, Prettier
+
+## 技术约束
+
+*   **H5 兼容性：** 确保应用在主流移动浏览器和 WebView 环境下良好运行。
+*   **API 依赖：** 前端开发进度受后端 API 接口开发进度的影响。
+*   **性能优化：** 考虑到 H5 应用的特点，需要关注首屏加载速度、渲染性能和资源占用。
+
+## 依赖管理
+
+*   通过 `package.json` 管理项目依赖。
+*   定期更新依赖，关注安全漏洞和性能改进。
+
+## 工具使用模式
+
+*   **代码格式化：** 使用 Prettier 统一代码风格。
+*   **代码规范：** 使用 ESLint 检查代码质量和潜在问题。
+*   **版本控制：** 使用 Git 进行版本控制，遵循 Git Flow 或 Trunk Based Development 工作流。
