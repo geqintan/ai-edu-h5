@@ -8,7 +8,7 @@
     </van-swipe>
 
     <div class="main-course-info">
-      <van-button type="primary" block to="/courses" class="enroll-button">立即报名</van-button>
+      <van-button type="primary" block to="/enrollment" class="enroll-button">立即报名</van-button>
     </div>
 
     <div class="past-courses-section" v-if="false">

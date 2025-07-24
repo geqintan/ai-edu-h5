@@ -93,8 +93,11 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router'; // 引入 useRouter
 import { Tabs, Tab, Form, Field, CellGroup, Button, Uploader, showToast } from 'vant';
+import { enrollmentApi } from '@/api';
 
+const router = useRouter(); // 初始化 router
 const activeTab = ref('individual'); // 默认选中个人报名
 
 // 个人报名表单数据
@@ -114,10 +117,27 @@ const enterpriseForm = ref({
 });
 
 // 个人报名提交
-const onSubmitIndividual = (values) => {
+const onSubmitIndividual = async (values) => {
   console.log('个人报名提交:', values);
-  showToast('个人报名提交成功！');
-  // 这里可以添加API调用逻辑
+  try {
+    const res = await enrollmentApi.submitIndividualEnrollment(values);
+    if (res.code === 200) { // 假设 200 表示成功
+      showToast('个人报名提交成功！');
+      // 可以在这里进行页面跳转或清空表单
+      individualForm.value = {
+        name: '',
+        phone: '',
+        company: '',
+        position: '',
+        email: '',
+      };
+      // 报名成功后跳转到支付页面
+      router.push('/payment');
+    }
+  } catch (error) {
+    console.error('个人报名提交失败:', error);
+    // 错误信息已在拦截器中处理，这里无需再次 showToast
+  }
 };
 
 // 企业报名提交
