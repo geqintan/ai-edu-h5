@@ -100,3 +100,7 @@ export const orderApi = {
   getIndividualOrders: (params) => get('/orders/individual', params),
   getEnterpriseOrders: (params) => get('/orders/enterprise', params),
 };
+
+export const courseApi = {
+  getCourseDetails: (id) => get(`/course/details/${id}`),
+};

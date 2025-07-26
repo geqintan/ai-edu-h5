@@ -15,4 +15,10 @@
   padding: 20px;
   text-align: center;
 }
+
+.customer-service-page h1 {
+  font-size: 18px; /* 调整字体大小 */
+  font-weight: bold; /* 设置粗体 */
+  margin-bottom: 30px; /* 增加标题与内容的间距 */
+}
 </style>

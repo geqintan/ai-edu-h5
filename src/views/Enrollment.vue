@@ -1,9 +1,9 @@
 <template>
   <div class="enrollment-page">
+    <h1>报名</h1>
     <van-tabs v-model:active="activeTab" sticky>
       <van-tab title="个人报名" name="individual">
         <div class="form-section">
-          <h2>个人报名</h2>
           <van-form @submit="onSubmitIndividual">
             <van-cell-group inset>
               <van-field
@@ -12,6 +12,7 @@
                 label="姓名"
                 placeholder="请输入姓名"
                 :rules="[{ required: true, message: '请填写姓名' }]"
+                autocomplete="name"
               />
               <van-field
                 v-model="individualForm.phone"
@@ -19,6 +20,7 @@
                 label="手机号码"
                 placeholder="请输入手机号码"
                 :rules="[{ required: true, message: '请填写手机号码' }, { pattern: /^1[3-9]\d{9}$/, message: '手机号码格式不正确' }]"
+                autocomplete="tel"
               />
               <van-field
                 v-model="individualForm.company"
@@ -26,6 +28,7 @@
                 label="所在企业"
                 placeholder="请输入所在企业"
                 :rules="[{ required: true, message: '请填写所在企业' }]"
+                autocomplete="organization"
               />
               <van-field
                 v-model="individualForm.position"
@@ -33,6 +36,7 @@
                 label="职务"
                 placeholder="请输入职务"
                 :rules="[{ required: true, message: '请填写职务' }]"
+                autocomplete="job-title"
               />
               <van-field
                 v-model="individualForm.email"
@@ -40,6 +44,7 @@
                 label="邮箱"
                 placeholder="请输入邮箱"
                 :rules="[{ required: true, message: '请填写邮箱' }, { pattern: /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, message: '邮箱格式不正确' }]"
+                autocomplete="email"
               />
             </van-cell-group>
             <div style="margin: 16px;">
@@ -53,7 +58,6 @@
 
       <van-tab title="企业报名（开发中）" name="enterprise">
         <div class="form-section">
-          <h2 style="color: red;">企业报名（开发中）</h2>
           <van-form @submit="onSubmitEnterprise">
             <van-cell-group inset>
               <van-field
@@ -157,16 +161,19 @@ const afterReadFile = (file) => {
 
 <style scoped>
 .enrollment-page {
+  padding: 20px; /* 增加内边距 */
+  text-align: center; /* 居中对齐 */
   padding-bottom: 60px; /* 为底部 Tabbar 留出空间 */
+}
+
+.enrollment-page h1 {
+  font-size: 18px; /* 调整字体大小 */
+  font-weight: bold; /* 设置粗体 */
+  margin-bottom: 30px; /* 增加标题与内容的间距 */
+  text-align: center; /* 居中对齐 */
 }
 
 .form-section {
   padding: 20px 0;
-}
-
-.form-section h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
 }
 </style>

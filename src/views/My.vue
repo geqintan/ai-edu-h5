@@ -73,7 +73,7 @@ const individualOrders = ref([
     courseName: 'AI 基础入门',
     quantity: 1,
     price: '999.00',
-    thumb: 'https://via.placeholder.com/100x100?text=AI+Course',
+    thumb: '@/assets/参考图片-01.jpg',
     status: '已报名',
   },
   {
@@ -87,7 +87,7 @@ const individualOrders = ref([
     courseName: '深度学习进阶',
     quantity: 1,
     price: '1999.00',
-    thumb: 'https://via.placeholder.com/100x100?text=DL+Course',
+    thumb: '@/assets/参考图片-01.jpg',
     status: '待支付',
   },
 ]);
@@ -120,6 +120,12 @@ const logout = () => {
 .my-page {
   padding: 20px;
   text-align: center;
+}
+
+.my-page h1 {
+  font-size: 18px; /* 调整字体大小 */
+  font-weight: bold; /* 设置粗体 */
+  margin-bottom: 30px; /* 增加标题与内容的间距 */
 }
 
 .logout-button {
